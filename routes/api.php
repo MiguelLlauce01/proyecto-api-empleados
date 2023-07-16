@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 #                             APIs CON TOKEN
 ###################################################################################
 Route::apiResource('role', roleController::class);
+Route::apiResource('employee', employeeController::class);
 
 Route::middleware(['auth:api'])->group(function () {
     //AGREGAMOS UNA RUTA PARA LA TABLA: "role"
