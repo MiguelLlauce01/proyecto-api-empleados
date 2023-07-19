@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 ###################################################################################
 Route::apiResource('role', roleController::class);
 Route::apiResource('employee', employeeController::class);
+Route::apiResource('salary', salaryController::class);
 
 Route::middleware(['auth:api'])->group(function () {
     //AGREGAMOS UNA RUTA PARA LA TABLA: "role"
