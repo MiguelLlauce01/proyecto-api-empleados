@@ -20,29 +20,29 @@ use Illuminate\Support\Facades\Route;
 ###################################################################################
 #                             APIs SIN TOKEN
 ###################################################################################
-//Route::post('/login', [LoginApiController::class, 'login']);
-//Route::post("/register", [LoginApiController::class, "register"]);
+  Route::post('/login', [LoginApiController::class, 'login']);
+  Route::post("/register", [LoginApiController::class, "register"]);
 ###################################################################################
 #                             APIs CON TOKEN
 ###################################################################################
-Route::apiResource('role', roleController::class);
-Route::apiResource('employee', employeeController::class);
-Route::apiResource('salary', salaryController::class);
+// Route::apiResource('role', roleController::class);
+// Route::apiResource('employee', employeeController::class);
+// Route::apiResource('salary', salaryController::class);
 
 Route::middleware(['auth:api'])->group(function () {
     //AGREGAMOS UNA RUTA PARA LA TABLA: "role"
     //'role':Cómo se va a llamar la ruta dentro del dominio; 
-    //Route::apiResource('role', roleController::class);//"roleController::class": nombre del controlador que manejará la ruta
+    Route::apiResource('role', roleController::class);//"roleController::class": nombre del controlador que manejará la ruta
 
     //AGREGAMOS UNA RUTA PARA LA TABLA: "employee"
     //'employee':Cómo se va a llamar la ruta dentro del dominio; 
-    //Route::apiResource('employee', employeeController::class);//"employeeController::class": nombre del controlador que manejará la ruta
+    Route::apiResource('employee', employeeController::class);//"employeeController::class": nombre del controlador que manejará la ruta
 
     //AGREGAMOS UNA RUTA PARA LA TABLA: "salary"
     //'salary':Cómo se va a llamar la ruta dentro del dominio; 
-    //Route::apiResource('salary', salaryController::class);//"roleController::class": nombre del controlador que manejará la ruta
+    Route::apiResource('salary', salaryController::class);//"roleController::class": nombre del controlador que manejará la ruta
 
     //PARA CERRAR SESIÓN
-    //Route::post("logout", [LoginApiController::class, "logout"]);
+    Route::post("logout", [LoginApiController::class, "logout"]);
 
 });
